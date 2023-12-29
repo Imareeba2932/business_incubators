@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-
-const Pmanage = () => {
-  const navigate = useNavigate();
+const Umanage = () => {
   const [services, setServices] = useState([]);
 
-  const { category } = useParams();
+//   const { category } = useParams();
 
   const fetchPlanningServices = async () => {
-    const res = await fetch("http://localhost:3000/services/getbyscategory/planning");
+    const res = await fetch("http://localhost:3000/users1/getall");
 
     console.log(res.status);
 
     const data = await res.json();
     console.log(data);
-    
-    if (category) {
-      setServices(data.filter((ser) => ser.category === category));
-    } else {
-      setServices(data);
-    }
+    // if (category) {
+    //   setServices(data.filter((ser) => ser.category === category));
+    // } else {
+    setServices(data);
+    // }
   };
 
   useEffect(() => {
@@ -30,7 +27,7 @@ const Pmanage = () => {
   const deleteService = async (id) => {
     console.log(id);
 
-    const res = await fetch('http://localhost:3000/services/delete/' + id, { method: 'DELETE' });
+    const res = await fetch('http://localhost:3000/users1/delete/' + id, { method: 'DELETE' });
 
     if (res.status === 200) {
       fetchPlanningServices();
@@ -45,16 +42,16 @@ const Pmanage = () => {
         {/* <td>
           <img style={{ height: 50 }} src={service.simage} alt="" />
         </td> */}
-        <td>{service.sname}</td>
-        {/* <td>{service.scategory}</td> */}
-        <td>{service.sdescription}</td>
+        <td>{service.fname}</td>
+        <td>{service.lname}</td>
+        <td>{service.email}</td>
         {/* <td>{service.pricingplan}</td> */}
-    
+        <td>
+          
+        </td>
+       
         <td>
         <button className='btn btn-danger' onClick={() => { deleteService(service._id) }} >Delete</button>
-        </td>
-        <td>
-        <button  className='btn btn-danger' onClick={ () => { navigate('/UpdateService/'+service._id) }} > Update</button>
         </td>
         
       </tr>
@@ -66,7 +63,7 @@ const Pmanage = () => {
     <div>
       <header className=" mt-2">
         <div className="container py-5">
-          <h1 className="">Management of Planning Services</h1>
+          <h1 className="">User Database</h1>
           <hr />
           <div className="row">
             <div className="col-md-4">
@@ -79,17 +76,16 @@ const Pmanage = () => {
 
       <div className="container">
 
-        <table className="table table-dark table-striped table-bordered">
+        <table className="table table-dark">
           <thead>
             <tr>
               {/* <th>Image</th> */}
-              <th>Name</th>
-              {/* <th>Category</th> */}
-              <th colSpan={2}>Description</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th colSpan={2}>Email</th>
+              {/* <th>Pricing Plan</th> */}
               <th></th>
               
-              {/* <th>Pricing Plan</th> */}
-           
             </tr>
           </thead>
           <tbody>
@@ -102,4 +98,4 @@ const Pmanage = () => {
   )
 }
 
-export default Pmanage
+export default Umanage

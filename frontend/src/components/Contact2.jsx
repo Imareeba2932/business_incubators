@@ -26,7 +26,7 @@ const Contact2 = () => {
         onSubmit: async (values, action) => {
             console.log(values);
 
-            const res = await fetch('http://localhost:3000/contact/add', {
+            const res = await fetch('http://localhost:3000/contacts/add', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
@@ -39,7 +39,8 @@ const Contact2 = () => {
             if (res.status === 200) {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Message Sent Successfully'
+                    title: 'Message Sent Successfully',
+                    text: 'We will contact you soon'
                 })
                 navigate('/');
             } else {

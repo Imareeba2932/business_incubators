@@ -37,7 +37,7 @@ const ViewService = () => {
             <section className="">
                 <div className="card bg-dark w-100 mb-5 ">
                     <h3 className="text-light p-4">Need help? Contact for free business councelling</h3>
-                    <Link to='/Contact' className="btn btn-primary w-25 m-3">Find Councellor</Link>
+                    <Link to='/Contact2' className="btn btn-primary w-25 m-3">Find Councellor</Link>
                 </div>
             </section>
         </div>

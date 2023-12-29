@@ -14,7 +14,6 @@ const Login = () => {
     const { setLoggedin } = useAppContext();
 
     const navigate = useNavigate();
-
     const loginForm = useFormik({
         initialValues: {
             email: '',
@@ -23,7 +22,7 @@ const Login = () => {
         onSubmit: async (values, action) => {
             console.log(values);
 
-            const res = await fetch('http://localhost:3000/user/authenticate', {
+            const res = await fetch('http://localhost:3000/users1/authenticate', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
@@ -42,8 +41,13 @@ const Login = () => {
 
                 const data = await res.json();
                 sessionStorage.setItem('isloggedin', true);
-                sessionStorage.setItem('user', JSON.stringify(data));
-                navigate('/');
+                if(data.role === 'admin'){
+                    sessionStorage.setItem('admin', JSON.stringify(data));
+                    navigate('/admin/base');
+                }else{
+                    sessionStorage.setItem('user', JSON.stringify(data));
+                    navigate('/');
+                }
             } else if (res.status === 400
                 ) {
                 Swal.fire({
@@ -63,7 +67,7 @@ const Login = () => {
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col-md-9 col-lg-6 col-xl-5">
                         <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                            src="https://i.pinimg.com/736x/6b/1b/22/6b1b22573f9f3d4bba11a9fa5cb45652.jpg"
                             className="img-fluid"
                             alt="Sample image"
                         />

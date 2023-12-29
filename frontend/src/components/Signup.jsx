@@ -25,7 +25,7 @@ const Signup = () => {
 
             console.log(values);
 
-            const res = await fetch('http://localhost:3000/user/add', {
+            const res = await fetch('http://localhost:3000/users1/add', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
@@ -72,8 +72,8 @@ const Signup = () => {
                             <div
                                 className="card cascading-right"
                                 style={{
-                                    background: "hsla(0, 0%, 100%, 0.55)",
-                                    backdropFilter: "blur(30px)"
+                                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                                    // backdropFilter: "blur(80px)"
                                 }}
                             >
                                 <div className="card-body p-5 shadow-5 text-center">
@@ -152,7 +152,7 @@ const Signup = () => {
                         </div>
                         <div className="col-lg-6 mb-5 mb-lg-0">
                             <img
-                                src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
+                                src="https://static.vecteezy.com/system/resources/previews/002/779/363/large_2x/sign-up-concept-young-man-signing-up-or-login-to-online-account-on-smartphone-app-secure-login-and-password-illustration-flat-vector.jpg"
                                 className="w-100 rounded-4 shadow-4"
                                 alt=""
                             />

@@ -13,10 +13,13 @@ function Main() {
   }
 
   return (
-    <div className='grid-container'>
-      <Header OpenSidebar={OpenSidebar}/>
-      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <Outlet />
+    <div>
+      <div className='grid-container'>
+        <Header OpenSidebar={OpenSidebar} > <Outlet /> </Header>
+        <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
+        
+      </div>
+      
     </div>
   )
 }

@@ -45,6 +45,7 @@ const Home = () => {
                             <h1 className='s1-txt-h2'>BUSINESS INCUBATOR</h1>
                             <p className='s1-txt-p'>Where business takes flight!!</p>
                         </Fade>
+                        <Link to="/services" className='btn btn-danger start-b'>Get Started</Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='slide2'>
@@ -56,10 +57,14 @@ const Home = () => {
                         </Fade>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className='slide3'></SwiperSlide>
-                <SwiperSlide className='slide4'></SwiperSlide>
-                <SwiperSlide className='slide5'></SwiperSlide>
-                <SwiperSlide className='slide6'></SwiperSlide>
+                <SwiperSlide className='slide3'>
+                    <Fade bottom>
+                        <h1 className='s3-txt-h1'>PROVIDING EXPERT SERVICES FOR</h1>
+                        <h1 className='s3-txt-h2'>YOUR ENTREPRENEURIAL</h1>
+                        <h1 className='s3-txt-h3'>JOURNEY !!!</h1>
+                    </Fade>
+                </SwiperSlide>
+
             </Swiper>
 
             <section className='d-flex mb-5'>

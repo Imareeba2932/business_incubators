@@ -5,8 +5,8 @@ const myschema = new Schema({
     lname: {type:String, required: true},
     email: {type:String, required: true, unique: true},
     phone_number: {type:String, unique: true},
-    meassage: {type:String, required: true},
+    message: {type:String},
    
 });
 
-module.exports = model('contact',myschema);
+module.exports = model('contacts',myschema);

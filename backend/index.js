@@ -16,8 +16,8 @@ app.use(cors({
     origin: ['http://localhost:5173']
 }))
 app.use(express.json());
-app.use('/user', UserRouter);
-app.use('/contact', ContactRouter);
+app.use('/users1', UserRouter);
+app.use('/contacts', ContactRouter);
 app.use('/services', PlanningRouter);
 app.use('/services', ManagingRouter);
 app.use('/services', LaunchingRouter);

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 const Mmanage = () => {
+  const navigate = useNavigate();
   const [services, setServices] = useState([]);
 
   const { category } = useParams();
@@ -43,14 +44,15 @@ const Mmanage = () => {
           <img style={{ height: 50 }} src={service.simage} alt="" />
         </td> */}
         <td>{service.sname}</td>
-        <td>{service.scategory}</td>
+        {/* <td>{service.scategory}</td> */}
         <td>{service.sdescription}</td>
         {/* <td>{service.pricingplan}</td> */}
-        <td>
-          
-        </td>
+      
         <td>
         <button className='btn btn-danger' onClick={() => { deleteService(service._id) }} >Delete</button>
+        </td>
+        <td>
+        <button  className='btn btn-danger' onClick={ () => { navigate('/UpdateService/'+service._id) }} > Update</button>
         </td>
       </tr>
     ));
@@ -59,11 +61,11 @@ const Mmanage = () => {
 
   return (
     <div>
-      <header className="bg-danger text-white mt-2">
+      <header className=" mt-2">
         <div className="container py-5">
-          <h1 className="">Manage Product</h1>
+          <h1 className="">Management of managing Services</h1>
           <hr />
-          <div className="row mt-4">
+          <div className="row">
             <div className="col-md-4">
             </div>
           </div>
@@ -72,17 +74,18 @@ const Mmanage = () => {
 
 
 
-      <div className="container mt-5">
+      <div className="container">
 
-        <table className="table table-dark">
+        <table className="table table-dark table-striped table-bordered">
           <thead>
             <tr>
               {/* <th>Image</th> */}
               <th>Name</th>
-              <th>Category</th>
+              {/* <th>Category</th> */}
               <th colSpan={2}>Description</th>
-              {/* <th>Pricing Plan</th> */}
               <th></th>
+              {/* <th>Pricing Plan</th> */}
+             
             </tr>
           </thead>
           <tbody>

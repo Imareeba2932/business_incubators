@@ -16,31 +16,42 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
         </div>
 
         <ul className='sidebar-list'>
+           
             <li className='sidebar-list-item'>
-                <a href="">
-                    <BsGrid1X2Fill className='icon'/> Dashboard
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <Link to="/">
-                    <BsFillArchiveFill className='icon'/> Home
+                <Link to="/admin/base">
+                    <BsFillArchiveFill className='icon'/> Dashboard
                 </Link>
             </li>
             <li className='sidebar-list-item'>
-                <Link to="/services">
-                    <BsFillGrid3X3GapFill className='icon'/> Services
+                <Link to="/admin/Pmanage">
+                    <BsFillGrid3X3GapFill className='icon'/> Planning Services
                 </Link>
             </li>
             <li className='sidebar-list-item'>
-                <Link to="/Contact2">
-                    <BsPeopleFill className='icon'/> Contact Us
+                <Link to="/admin/Lmanage">
+                    <BsPeopleFill className='icon'/> Launching Services
                 </Link>
             </li>
             <li className='sidebar-list-item'>
-                <Link to="/UserProfile">
+                <Link to="/admin/Mmanage">
+                    <BsPeopleFill className='icon'/> Managing Services
+                </Link>
+            </li>
+            <li className='sidebar-list-item'>
+                <Link to="/admin/Umanage">
+                    <BsPeopleFill className='icon'/> User Database
+                </Link>
+            </li>
+            <li className='sidebar-list-item'>
+                <Link to="/admin/EnquiryData">
+                    <BsPeopleFill className='icon'/> Enquiry Data
+                </Link>
+            </li>
+            {/* <li className='sidebar-list-item'>
+                <Link to="/Admin/UserProfile">
                     <BsPeopleFill className='icon'/> User Profile
                 </Link>
-            </li>
+            </li> */}
             
         </ul>
     </aside>

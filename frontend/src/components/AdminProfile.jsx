@@ -3,9 +3,9 @@ import app_config from "../../config";
 import Swal from "sweetalert2";
 import { useFormik } from "formik";
 
-const UserProfile = () => {
+const AdminProfile = () => {
   const [currentUser, setCurrentUser] = useState(
-    JSON.parse(sessionStorage.getItem("user"))
+    JSON.parse(sessionStorage.getItem("admin"))
   );
 
   const [passwordHidden, setPasswordHidden] = useState(true);
@@ -281,4 +281,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default AdminProfile;

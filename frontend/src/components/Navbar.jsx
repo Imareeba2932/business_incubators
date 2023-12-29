@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.png'
-import useAppContext from '../../AppContext';
+
 
 const Navbar = () => {
   const location = useLocation();
@@ -9,6 +9,7 @@ const Navbar = () => {
   const isHomePage = location.pathname === '/';
 
   const isLoggedIn = sessionStorage.getItem('isloggedin');
+  const [currentAdmin, setCurrentAdmin] = useState(JSON.parse(sessionStorage.getItem('admin')));
 
   const {logout} = useAppContext();
 
@@ -74,6 +75,7 @@ const Navbar = () => {
                 <Link type='button' onClick={logout} className="btn btn-outline-light px-3 me-2">
                   Logout
                 </Link>
+                {/* <Link to="/UserProfile" className="btn btn-light me-3">Profile</Link> */}
               </div>
             ) : (
 
